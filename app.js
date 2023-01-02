@@ -243,12 +243,13 @@ function alterProduct() {
         return
     }
 
-    stock.forEach(element => {
-        if(element.id === product) {
-            element.name = newName
-            element.quantity = newQuantity
-            element.value = newValue
-            element.description = newDescription
+    // Destructing de objetos
+    stock.forEach(function ({id, name, quantity, value, description}) {
+        if(id === product) {
+            name = newName,
+            quantity = newQuantity,
+            value = newValue,
+            description = newDescription
         }
     })
 
